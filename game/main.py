@@ -13,13 +13,20 @@ import level
 import character
 
 pygame.init() #Initialize pygame
-#pygame
+
+#pygame window with background and title block
 WINDOW = pygame.display.set_mode((const.WIN_SIZE, const.WIN_SIZE))
 BACKGROUND = pygame.image.load(const.BACKGROUND).convert()
 pygame.display.set_caption('MC Gyver Escape')
+
+#labyrinth and character classes instantiation
 LAB = level.Labyrinth("data/level1.txt")
 MCGYVER = character.Character(const.CHARACTER, LAB)
+
+#resize the character image
 MCGYVER.image = pygame.transform.scale(MCGYVER.image, (const.SPRITE_SIZE, const.SPRITE_SIZE))
+
+#generate the lab its objects and display the character
 WINDOW.blit(BACKGROUND, (0, 0))
 LAB.create_lab()
 LAB.lab_object()
