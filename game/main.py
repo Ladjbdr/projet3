@@ -30,6 +30,7 @@ WINDOW.blit(MCGYVER.image, (MCGYVER.pix_x, MCGYVER.pix_y))
 MAINTAIN = 1
 END = 0
 while MAINTAIN:
+    pygame.time.Clock().tick(30)
     OBJCT_FOUND = MCGYVER.objct
     WIN = 'You Win!!'
     LOSE = 'You Lose!! MCGyver is dead man!!'
@@ -59,6 +60,7 @@ while MAINTAIN:
     pygame.display.flip()
 
 while END:
+    pygame.time.Clock().tick(30)
     for event in pygame.event.get():
         if event.type == pyl.QUIT:
             END = 0
