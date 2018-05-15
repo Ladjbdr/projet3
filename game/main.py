@@ -45,7 +45,7 @@ while MAINTAIN:
     LOSE_TEXT = FONT.render(LOSE, 1, (0, 0, 0))
     WIN_TEXT = FONT.render(WIN, 1, (255, 255, 255))
     for event in pygame.event.get():
-        if event.type == pyl.QUIT:
+        if event.type == pyl.QUIT or event.type == pyl.K_ESCAPE:
             MAINTAIN = 0
             END = 0
         if event.type == pyl.KEYDOWN:
@@ -69,7 +69,7 @@ while MAINTAIN:
 while END:
     pygame.time.Clock().tick(30)
     for event in pygame.event.get():
-        if event.type == pyl.QUIT:
+        if event.type == pyl.QUIT or event.type == pyl.K_ESCAPE:
             END = 0
     if OBJCT_FOUND < 3:
         pygame.time.delay(3000)
